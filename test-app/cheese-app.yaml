@@ -11,7 +11,7 @@ spec:
   source:
     path: test2/git-dir-generator-example/argo-projects/argo-image-updater/
     repoURL: https://github.com/d-cryptic/testing-argocd.git
-    revision: main
+        targetRevision: HEAD
     directory:
       exclude: '{config.json}'
       include: '*.yaml'
