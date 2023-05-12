@@ -11,11 +11,13 @@ spec:
     name: in-cluster
   project: default
   source:
-    path: /
+    path: test-app/
     repoURL: https://github.com/d-cryptic/testing-argocd-2.git
     targetRevision: HEAD
     directory:
       recurse: true
+      exclude: '{config.json}'
+      include: '*.yaml'
   syncPolicy:
     automated:
       prune: false
