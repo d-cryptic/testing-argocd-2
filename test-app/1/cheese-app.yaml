@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: test-app-2
+  name: test-app
   namespace: argocd
   # finalizers:
   # - resources-finalizer.argocd.argoproj.io
@@ -11,7 +11,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   project: default
   source:
-    path: test2/git-dir-generator-example/argo-projects/argo-workflows/
+    path: test2/git-dir-generator-example/argo-projects/argo-image-updater/
     repoURL: https://github.com/d-cryptic/testing-argocd.git
     targetRevision: HEAD
     directory:

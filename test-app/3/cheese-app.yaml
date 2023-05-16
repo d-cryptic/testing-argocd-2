@@ -11,7 +11,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   project: default
   source:
-    path: test2/git-dir-generator-example/argo-projects/argo-image-updater/
+    path: test2/git-dir-generator-example/argo-projects/example/argo-rollouts/
     repoURL: https://github.com/d-cryptic/testing-argocd.git
     targetRevision: HEAD
     directory:
