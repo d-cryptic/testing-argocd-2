@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-app-2
+  namespace: argocd
+  # finalizers:
+  # - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: argocd
+    server: 'https://kubernetes.default.svc'
+  project: default
+  source:
+    path: test2/git-dir-generator-example/argo-projects/argo-image-updater/
+    repoURL: https://github.com/d-cryptic/testing-argocd.git
+    targetRevision: HEAD
+    directory:
+      exclude: '{config.json}'
+      include: '*.yaml'
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - Validate=true
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
+      - Prune=true
