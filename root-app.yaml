@@ -16,8 +16,8 @@ spec:
     targetRevision: HEAD
     directory:
       recurse: true
-      exclude: '{config.json}'
-      include: '*.yaml'
+      # exclude: '{config.json}'
+      # include: '*.yaml'
   syncPolicy:
     automated:
       prune: true
@@ -26,4 +26,3 @@ spec:
       - Validate=true
       - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
-      - PrunePropagationPolicy=orphan
