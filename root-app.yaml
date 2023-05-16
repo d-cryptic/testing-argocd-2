@@ -5,7 +5,18 @@ metadata:
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
+
+# operation:
+#   sync:
+#     synStrategy:
+#       apply:
+#         force: true
 spec:
+  # ignoreDifferences:
+  # - group: '*'
+  #   kind: Application
+  #   jsonPointers:
+  #   - /operation
   destination:
     namespace: argocd
     server: 'https://kubernetes.default.svc'
@@ -21,10 +32,11 @@ spec:
   syncPolicy:
     automated:
       prune: true
-      selfHeal: false
+      selfHeal: true
     syncOptions:
       - Validate=true
       - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
       - Prune=true
       - PrunePropagationPolicy=orphan
+      - Delete=true
