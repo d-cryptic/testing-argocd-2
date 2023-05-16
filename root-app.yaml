@@ -21,8 +21,10 @@ spec:
   syncPolicy:
     automated:
       prune: true
-      selfHeal: true
+      selfHeal: false
     syncOptions:
       - Validate=true
       - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
+      - Prune=true
+      - PrunePropagationPolicy=orphan
