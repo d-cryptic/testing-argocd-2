@@ -8,7 +8,7 @@ metadata:
 
 # operation:
 #   sync:
-#     synStrategy:
+#     syncStrategy:
 #       apply:
 #         force: true
 spec:
@@ -39,4 +39,4 @@ spec:
       - ApplyOutOfSyncOnly=true
       - Prune=true
       - PrunePropagationPolicy=orphan
-      - Delete=true
+      - Replace=true
